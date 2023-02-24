@@ -29,5 +29,5 @@ function polinFunction () {
 
 
 let isPolindrom = polinFunction();
-console.log(isPolindrom);
+console.log(isPolindrom)
 
