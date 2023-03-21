@@ -8,7 +8,7 @@ const NAMES = ['Сергей', 'Людмила', 'Ирина', 'Светлана
 const NUMBERS_PHOTO = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25];
 
 
-const randomPhotos = Math.floor(Math.random() * (25 - 1));
+const randomPhotos = Math.floor(Math.random() * (6 - 1));
 const randomName = Math.floor(Math.random() * (4 - 1));
 
 
@@ -26,7 +26,7 @@ const functionComments = commentFotos();
 
 function fotosAvatars (){
   return {
-    avatar: `img/avatar-1${NUMBERS_PHOTO[randomPhotos]}.svg`,
+    avatar: `img/avatar-${NUMBERS_PHOTO[randomPhotos]}.svg`,
   };
 }
 const fotoss = fotosAvatars ();
@@ -56,3 +56,19 @@ function fotosFunctions () {
   return fotos;
 }
 export{fotosFunctions};
+
+const fotosMass = fotosFunctions();
+const oneFotos = fotosMass[0];
+
+const picture = document.querySelector('#picture').content;
+// const pictureLink = document.querySelector('.picture');
+// const pictureImg = document.querySelector('.picture__img');
+// const pictureComments = document.querySelector('.picture__comments');
+// const pictureLikes = document.querySelector('.picture__likes');
+const pictures = document.querySelector('.pictures');
+
+const newRender = picture.cloneNode(true);
+newRender.querySelector ('.picture__img').src = oneFotos.url.avatar;
+newRender.querySelector('.picture__likes').textContent = oneFotos.likes;
+newRender.querySelector ('.picture__comments').textContent = oneFotos.comments[0].message;
+pictures.append(newRender);
