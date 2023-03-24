@@ -1,3 +1,5 @@
+
+
 const COMMENT_LISTS = [ 'Всё отлично!','В целом всё неплохо', 'Но не всё',
   'Когда вы делаете фотографию', 'хорошо бы убирать палец из кадра', 'В конце концов это просто непрофессионально',
   'Моя бабушка случайно чихнула с фотоаппаратом в руках и у неё получилась фотография лучше',
@@ -17,12 +19,13 @@ function commentFotos () {
   const randomNames = Math.floor(Math.random() * (4 - 1));
   return {
     id: 2,
-    avatar: `img/avatar-1${NUMBERS_PHOTO}.svg`,
+    avatar: `img/avatar-${NUMBERS_PHOTO[1]}.svg`,
     message: COMMENT_LISTS[randomComments],
     name:  NAMES[randomNames],
   };
 }
-const functionComments = commentFotos();
+
+const comments = commentFotos();
 
 function fotosAvatars (){
   return {
@@ -40,7 +43,7 @@ function functionInfoPhotos (item) {
     description:  DESCRIPTIONS[randomNumber],
     likes: Math.floor(Math.random() * (200 - 15)),
     name:  NAMES[randomName],
-    comments: [functionComments],
+    comments: [comments,comments,comments,comments,comments,comments],
   };
   return date;
 }
@@ -72,3 +75,6 @@ newRender.querySelector ('.picture__img').src = oneFotos.url.avatar;
 newRender.querySelector('.picture__likes').textContent = oneFotos.likes;
 newRender.querySelector ('.picture__comments').textContent = oneFotos.comments[0].message;
 pictures.append(newRender);
+
+
+export {fotosMass};
