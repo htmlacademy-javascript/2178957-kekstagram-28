@@ -24,7 +24,8 @@ function commentFotos () {
     name:  NAMES[randomNames],
   };
 }
-const functionComments = commentFotos();
+
+const comments = commentFotos();
 
 function fotosAvatars (){
   return {
@@ -42,7 +43,7 @@ function functionInfoPhotos (item) {
     description:  DESCRIPTIONS[randomNumber],
     likes: Math.floor(Math.random() * (200 - 15)),
     name:  NAMES[randomName],
-    comments: [functionComments],
+    comments: [comments,comments,comments,comments,comments,comments],
   };
   return date;
 }
