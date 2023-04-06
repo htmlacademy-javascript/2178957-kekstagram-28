@@ -51,8 +51,6 @@ for(let i = 0; i <= 4; i++){
   newLi.querySelector('.social__text').textContent = i;
   socialComments.appendChild(newLi);
 }
-
-
 socialCommentsLoader.addEventListener('click', () => {
   for(let i = 0; i <= 4 ; i++){
     newLi = socialCommentLi.cloneNode(true);
